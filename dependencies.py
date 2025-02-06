@@ -5,4 +5,4 @@ CLIENT = InferenceHTTPClient(
     api_key="wLHoSeXIZwBKYqMmpU6t"
 )
 
-result = CLIENT.infer('rocketlaunch.jpg', model_id="rockets-rockets-flying/16")
+result = CLIENT.infer('rocketlaunch.jpg', model_id="rocket-detect/2")  # rockets-rockets-flying/16
