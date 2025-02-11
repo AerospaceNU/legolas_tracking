@@ -6,7 +6,7 @@ rf = roboflow.Roboflow(api_key="wLHoSeXIZwBKYqMmpU6t")
 project = rf.workspace().project("123-mdbcu-8dhfr")
 
 #can specify weights_filename, default is "weights/best.pt"
-version = project.version("")
+version = project.version("123-mdbcu-8dhfr/1")
 # version.deploy("model-type", "tinyyolo-custom-weights/", "rocket-weights.pt")
 
 #example1 - directory path is "training1/model1.pt" for yolov8 model

@@ -9,7 +9,7 @@ image_file = "rocketlaunch.jpg"
 image = cv2.imread(image_file)
 
 # load a pre-trained yolov8n model
-model = get_model(model_id="rocket-detect/2")  # rockets-rockets-flying/16
+model = get_model(model_id="rocket-wgmja-277le/3", api_key="GGbWyL8M3YlR5nLJGdIn")  # rockets-rockets-flying/16
 
 # run inference on our chosen image, image can be a url, a numpy array, a PIL image, etc.
 results = model.infer(image)[0]
