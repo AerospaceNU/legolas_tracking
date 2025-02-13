@@ -40,7 +40,7 @@ if not cap.isOpened():
     exit(1)
 
 # Load your pre-trained YOLO model
-model = get_model(model_id="rocket-wgmja-277le/3", api_key="GGbWyL8M3YlR5nLJGdIn")
+model = get_model(model_id="rocket-wgmja-277le/3", api_key="API_KEY")
 
 # Optionally, you can initialize your annotators once if you wish.
 bounding_box_annotator = sv.BoxAnnotator()

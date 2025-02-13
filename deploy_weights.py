@@ -2,7 +2,7 @@
 from ultralytics import YOLO
 import roboflow
 
-rf = roboflow.Roboflow(api_key="wLHoSeXIZwBKYqMmpU6t")
+rf = roboflow.Roboflow(api_key="API_KEY")
 project = rf.workspace().project("123-mdbcu-8dhfr")
 
 #can specify weights_filename, default is "weights/best.pt"
