@@ -9,7 +9,7 @@ import Jetson.GPIO as GPIO
 PAN_SERVO_PIN = 17  # change to actual PWM-capable GPIO pin
 TILT_SERVO_PIN = 27 # change to actual PWM-capable GPIO pin
 
-GPIO.setmode(GPIO.BOARD) # or BCM? adjust more pin numbers as needed, not sure what they are
+GPIO.setmode(GPIO.BOARD) # or BCM? adjust pin numbers as needed, not sure what they are
 
 GPIO.setup(PAN_SERVO_PIN, GPIO.OUT)
 GPIO.setup(TILT_SERVO_PIN, GPIO.OUT)
@@ -26,8 +26,6 @@ def angle_to_duty_cycle(angle):
 pan_pwm.start(angle_to_duty_cycle(pan_angle))
 tilt_pwm.start(angle_to_duty_cycle(tilt_angle))
 time.sleep(1)
-
-
 
 
 # Define a GStreamer pipeline for a CSI camera on NVIDIA Jetson
