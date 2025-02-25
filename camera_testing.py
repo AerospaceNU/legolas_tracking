@@ -103,6 +103,8 @@ try:
         detections = sv.Detections.from_inference(results)
 
         if len(detections.xyxy) > 0:
+            # if rocket is detected, resets search mode
+            # if multiple are detected, tracks one with highest confidence
             xmin, ymin, xmax, ymax = detections.xyxy[0][:4]
 
             rocket_center_x = (xmin + xmax) / 2
@@ -113,6 +115,9 @@ try:
 
             pan_adjust = cp_pan * error_x
             tilt_adjust = cp_tilt * error_y
+
+            last_pan_adjust = pan_adjust
+            last_tilt_adjust = tilt_adjust
 
             pan_angle -= pan_adjust
             tilt_angle -= tilt_adjust
