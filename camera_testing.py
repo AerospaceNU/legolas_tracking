@@ -6,10 +6,10 @@ import supervision as sv
 import time
 import Jetson.GPIO as GPIO
 
-PAN_SERVO_PIN = 17
-TILT_SERVO_PIN = 27
+PAN_SERVO_PIN = 17  # change to actual PWM-capable GPIO pin
+TILT_SERVO_PIN = 27 # change to actual PWM-capable GPIO pin
 
-GPIO.setmode(GPIO.BOARD) # or BCM?
+GPIO.setmode(GPIO.BOARD) # or BCM? adjust more pin numbers as needed, not sure what they are
 
 GPIO.setup(PAN_SERVO_PIN, GPIO.OUT)
 GPIO.setup(TILT_SERVO_PIN, GPIO.OUT)
@@ -86,6 +86,7 @@ center_x, center_y = frame_width / 2, frame_height / 2
 last_pan_adjust = 0
 last_tilt_adjust = 0
 
+# speed in degrees per frame
 search_pan_speed = 0.5
 search_tilt_speed = 0.2
 
