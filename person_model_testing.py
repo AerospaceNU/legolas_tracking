@@ -6,6 +6,11 @@ import supervision as sv
 import time
 import Jetson.GPIO as GPIO
 
+# --------------- #
+### FOR TESTING ###
+### NOT the rocket model, this tracks humans so we can easily test tracking
+# --------------- #
+
 ### GPIO stuff is placeholder
 PAN_SERVO_PIN = 17  # change to actual PWM-capable GPIO pin
 TILT_SERVO_PIN = 27 # change to actual PWM-capable GPIO pin
@@ -71,7 +76,7 @@ if not cap.isOpened():
     exit(1)
 
 # Load your pre-trained YOLO model
-model = get_model(model_id="rocket-wgmja-277le/3", api_key="GGbWyL8M3YlR5nLJGdIn")
+model = get_model(model_id="human-detection-mmcqu/1", api_key="GGbWyL8M3YlR5nLJGdIn")
 
 # Optionally, you can initialize your annotators once if you wish.
 bounding_box_annotator = sv.BoxAnnotator()
@@ -113,11 +118,11 @@ try:
             # if multiple are detected, tracks one with highest confidence
             xmin, ymin, xmax, ymax = detections.xyxy[0][:4]
 
-            rocket_center_x = (xmin + xmax) / 2
-            rocket_center_y = (ymin + ymax) / 2
+            person_center_x = (xmin + xmax) / 2
+            person_center_y = (ymin + ymax) / 2
 
-            error_x = rocket_center_x - center_x
-            error_y = rocket_center_y - center_y
+            error_x = person_center_x - center_x
+            error_y = person_center_y - center_y
 
             pan_adjust = cp_pan * error_x
             tilt_adjust = cp_tilt * error_y
