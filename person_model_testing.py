@@ -24,8 +24,9 @@ pan_pwm = GPIO.PWM(PAN_SERVO_PIN, 50)
 tilt_pwm = GPIO.PWM(TILT_SERVO_PIN, 50)
 
 # ACTUAL commands, needs to be done
-def send_gimbal_command(pan, tilt):
+def ronin_controller(pan, tilt):
     # placeholder, replace with actual command interface
+    # ronin.set_
     command = f"SET_PAN_TILT {pan:.2f} {tilt:.2f}\n"
     print("sending command:", command)
 
