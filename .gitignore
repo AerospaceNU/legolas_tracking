@@ -1,0 +1,9 @@
+__pycache__
+*.mov
+*.MOV 
+*.jpg
+*.pt
+*.weights
+*.cfg
+*.names
+runs/
